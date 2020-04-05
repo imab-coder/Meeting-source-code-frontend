@@ -1,0 +1,26 @@
+/* my styles start*/
+
+.color {
+    background-color: #563D7C;
+}
+
+.position {
+    margin-top: 30px;
+}
+
+.style {
+    background: #F8F9FA;    
+}
+
+.position1 {
+    margin-top: 100px;
+}
+
+.meeting {
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px;
+    margin-bottom: 10px;
+    cursor: pointer;       
+}
+
+/* my styles end*/

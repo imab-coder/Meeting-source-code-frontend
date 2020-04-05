@@ -1,0 +1,52 @@
+<section class="container-fluid bg">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <div class="form-container">
+        <div class="col-12">
+          <h3>Sign Up</h3>
+          
+          <label>First Name</label>
+          <input type="text" id="inputFirstName" class="form-control" [(ngModel)]="firstName" placeholder="Enter First Name" required>
+          
+          <label>Last Name</label>
+          <input type="text" id="inputLastName" class="form-control" [(ngModel)]="lastName" placeholder="Enter Last Name" required>
+          
+          <label>User Name</label>
+          <input type="text" id="inputUserName" class="form-control" [(ngModel)]="userName" placeholder="Enter User Name"
+            (focusout)="setUserName()" required>
+      
+            <label>Email</label>
+          <input type="email" id="signUpEmail" class="form-control" [(ngModel)]="email" placeholder="Enter Email Address" required>
+      
+          <label>Password</label>
+          <input type="password" id="signupPassword" class="form-control" [(ngModel)]="password" placeholder="Enter password - minimum 8 chracters length" required>
+          
+          <label>Select Country</label>
+          <select class="form-control" id="inputCountry" [(ngModel)]="selectedCountry" name="country"
+            (change)="onCountryChange()">
+            <option *ngFor="let country of countryList" [value]="country.code">{{country.name}}</option>
+          </select>
+      
+          <label>Mobile</label>
+          <div class="input-group">
+            <div class="input-group-text">+{{countryCode}}</div>
+            <input type="number" pattern="^\d{10}$" min="10" id="inputMobile" class="form-control" name="mobile"
+              #mobile="ngModel" [(ngModel)]="mobileNumber" placeholder="Enter 10 digit mobile number" required>
+            <br>
+            <div [hidden]="mobile.valid || mobile.pristine" class="alert alert-danger col-12">
+              Mobile Number must be 10 numbers
+            </div>
+          </div>
+          <br>
+          <input type="checkbox" class="admin-checkbox" id="userType" [(ngModel)]="isAdmin" name="userType" (change)="setUserName()"><span>Signup as an Admin</span>
+          <hr>
+      
+          <button class="btn btn-lg btn-outline-primary btn-block" type="button" (click)="signUpFunction()">Register</button>
+          <hr>
+          <button type="button" class="btn btn-success btn-block btn-lg" (click)="goToSignIn()">Login</button>
+      
+        </div>
+      </div>
+        </section>
+    </section>
+</section>

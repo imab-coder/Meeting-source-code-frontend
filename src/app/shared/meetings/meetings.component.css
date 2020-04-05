@@ -1,0 +1,22 @@
+.owl-dt-trigger-disabled {
+    opacity:0;
+}
+
+.col-2{
+    line-height: 40px;
+}
+.col-2, .col-10{
+    margin-bottom: 10px;
+}
+.at-submit-btn{
+    text-align: right;
+}
+.at-date-picker-icon{
+    position: absolute;
+    right: 25px;
+    top: 0px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    
+}

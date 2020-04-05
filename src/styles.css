@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+.modal-backdrop{
+    z-index: 940 !important;
+}
+.modal{
+    z-index: 950 !important;
+}
+
+.header{
+    z-index: 2;
+    font-size: 20px;
+    background-color: #5f5f5f;
+    color: #f1f1f1;
+    width: 100%;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    height: 40px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.at-ellipsis{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+h2{
+    margin-bottom: 25px !important;
+    color: #777;
+}
+.shadow-box-card{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 20px;
+}

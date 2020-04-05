@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="meetingFormGroup" (ngSubmit)="saveMeeting()" method="post">
+      <div class="row">
+        <div class="col-2">Title: </div>
+        <div class="col-10">
+          <input type="text" id="inputTitle" class="form-control" placeholder="Enter the Title of meeting"
+            formControlName="title" require>
+        </div>
+        <div class="col-2">Purpose: </div>
+        <div class="col-10">
+          <input type="text" class="form-control" placeholder="Enter the purpose of meeting" formControlName="purpose"
+            name="purpose">
+        </div>
+        <div class="col-2">Start: </div>
+        <div class="col-10">
+          <input class="form-control" [owlDateTime]="dt1" name="start" formControlName="start"
+            placeholder="Start Date Time">
+          <span *ngIf="!isViewOnlyMeeting" [owlDateTimeTrigger]="dt1" class="at-date-picker-icon">
+            <i class="fa fa-calendar"></i>
+          </span>
+          <owl-date-time #dt1></owl-date-time>
+        </div>
+        <div class="col-2">End: </div>
+        <div class="col-10">
+          <input class="form-control" [owlDateTime]="dt2" name="end" formControlName="end" placeholder="End Date Time">
+          <span *ngIf="!isViewOnlyMeeting" [owlDateTimeTrigger]="dt2" class="at-date-picker-icon">
+            <i class="fa fa-calendar"></i>
+          </span>
+          <owl-date-time #dt2></owl-date-time>
+        </div>
+        <div class="col-2">Location: </div>
+        <div class="col-10">
+          <input type="text" id="location" class="form-control" formControlName="location" placeholder="location"
+            required>
+        </div>
+        <div class="col-2">Inviter: </div>
+        <div class="col-10">
+          <input type="text" class="form-control" formControlName="inviterName" name="inviter">
+        </div>
+        <div class="col-2">Invitee: </div>
+        <div class="col-10">
+          <input type="text" class="form-control" formControlName="inviteeName" name="invitee">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 at-submit-btn">
+            <button *ngIf="!isViewOnlyMeeting" class="btn btn-success" type="submit">Submit</button>
+        </div>
+        <div class="col-6">
+            <div *ngIf="!isViewOnlyMeeting" class="btn btn-primary" (click)="onClickCancel()">Cancel</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+.bg {
+    background: url('./../../../assets/images/110593-blue-and-yellow-blurred-background-vector-min.jpg');
+    width: 100%;
+    height: 130vh;
+    background-size: 200%;
+}
+
+
+h3 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+.form-container {
+    position: absolute;
+    top: 5vh;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #000;
+}
+
+@media only screen and (max-width: 678px) {
+    .bg {
+        background-size: 300%;
+    }
+}

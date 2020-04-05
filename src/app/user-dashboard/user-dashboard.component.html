@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark color">
+    <a class="navbar-brand col-5" href="#">Meeting Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse col-7" id="navbarNavAltMarkup">
+        <div class="navbar-nav col-12">
+            <a class="nav-item nav-link disabled col-11" href="#" tabindex="-1" aria-disabled="true">{{activeUser}}</a>
+            <a class="nav-item nav-link col-1" (click)="logout()" style="cursor: pointer;">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row position">
+      <div class="col-12">
+        <app-calendar [modalData]="modalData" [meetings]="meetings" (calendarEventEmitter)="onCalendarEvent($event)">
+        </app-calendar>
+      </div>
+    </div>
+  </div>
+
+
+  <ng-template #meetingTemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left"> Your meeting </h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="meetingModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-meeting [isEditMeeting]="false" [isViewOnlyMeeting]="true" [selectedMeeting]="selectedMeetingForView"
+        (onFormClose)="closeModal()">
+      </app-meeting>
+    </div>
+  </ng-template>
+  
+  <!-- template for reminder modal -->
+  <ng-template #reminderTemplate let-close="close">
+      <div class="modal-header">
+        <h5 class="modal-title">Meeting Reminder</h5>
+        <button type="button" class="close" (click)="snoozeRemiderModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="card-title">Your meeting <span><b>"{{meetingEvent.title}}"</b></span> will start soon.</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success"
+          (click)="snoozeRemiderModal()">Snooze</button>
+        <button type="button" class="btn btn-outline-secondary"
+          (click)="dismissRemiderModal()">Dismiss</button>
+      </div>
+    </ng-template>
